@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('usuarios.listar');
+// });
+
+// Listado de usuarios
+Route::get('/', 'UsuarioController@list');
+// Formulario de usuarios
+Route::get('/form', 'UsuarioController@userform');
+// Guardar usuarios
+Route::post('/save', 'UsuarioController@save')->name('save');
+// Eliminar usuarios
+Route::delete('/delete/{id}', 'UsuarioController@delete')->name('delete');
+// Formulario para editar usuarios
+Route::get('/editform/{id}', 'UsuarioController@editform')->name('editform');
+// Editar usuarios
+Route::patch('/edit/{id}', 'UsuarioController@edit')->name('edit');

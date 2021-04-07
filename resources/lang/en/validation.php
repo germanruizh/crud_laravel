@@ -130,9 +130,32 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'nombre' => [
+            'required' => 'El nombre es requerido',
+            'string' => 'El nombre tiene que ser un texto',
+            'max:255' => 'El nombre es demasiado largo'
         ],
+        'apellido' => [
+            'required' => 'El campo apellido es requerido',
+            'string' => 'El apellido tiene que ser un texto',
+            'max:255' => 'El apellido es demasiado largo'
+        ],
+        'email' => [
+            'required' => 'El correo electrónico es requerido',
+            'string' => 'El correo electrónico tiene que ser un texto',
+            'max:255' => 'El correo electrónico es demasiado largo',
+            'email' => 'Formato de email incorrecto',
+            'unique' => 'El email ya existe'
+        ],
+        'telefono' => [
+            'required' => 'El teléfono es requerido',
+            'max:10' => 'El número telefónico es demasiado largo'
+        ],
+        'cedula' => [
+            'required' => 'La cédula de ciudadanía es requerida',
+            'max:10' => 'La cédula de ciudadanía es demasiada larga',
+            'unique' => 'La cédula de ciudadanía ya existe'
+        ]
     ],
 
     /*
