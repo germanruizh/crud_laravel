@@ -10,7 +10,7 @@ class UsuarioController extends Controller
 {
     // Listado de usuarios
     public function list() {
-        $data['users'] = Usuario::paginate(3);
+        $data['users'] = Usuario::paginate(60);
         return view('usuarios.listar', $data);
     }
 
