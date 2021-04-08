@@ -45,14 +45,6 @@ class UsuarioController extends Controller
     }
     //Edicion de usuarios
     public function edit(Request $request, $id) {
-        $validator = $this->validate($request, [
-            'nombre'=>'required|string|max:255',
-            'email'=>'required|string|max:255|email|unique:usuarios',
-            'apellido'=>'required|string|max:255',
-            'cedula'=>'required|string|max:10|unique:usuarios',
-            'nombre'=>'required|string|max:255',
-            'telefono'=>'required|string|max:10'
-        ]);
         $datosUsuario = request()->except(['_token', '_method']);
         Usuario::where('id', '=', $id)->update($datosUsuario);
         return back()-> with('usuarioModificado', 'Usuario modificado');
